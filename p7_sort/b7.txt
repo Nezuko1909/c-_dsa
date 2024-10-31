@@ -1,0 +1,24 @@
+1. Insertion Sort
+    - Cách hoạt động: 
+        Xếp mẳng bằng cách lấy từng phần tử và xếp nó vào trong
+        phần đã được sắp xếp đúng trong mảng.
+
+        Thuật toán yêu cầu truy cập và so sánh nhiều lần giữa các phần tử
+        nên là việc lưu trữ dữ liệu trong LinkerList là không nên.
+
+    - Vì sao không nên:
+        Mỗi lần truy cập phần tử bất kỳ trong LinkerList đều phải duyệt
+        qua từng phần tử từ đầu danh sách đến vị trí đó với độ phức tạp
+        O(n) dẫn đến tăng độ phức tạp thuật toán.
+
+        Trong khi đó việc sử dụng Array có thể truy cập bất kỳ phần tử nào
+        với O(1).
+
+2. Selection Sort
+    - Cách hoạt động: 
+        Tìm phần tử nhỏ nhất từ một danh sách chưa được xếp và đổi chỗ
+        nó với phần tử đầu của danh sách, tiếp tục tìm và đổi chỗ với
+        phần tử 2,... đến hết mảng.
+
+        Selection Sort cũng yêu cầu truy cập và so sánh nhiều lần tương tự
+        Insertion Sort vì vậy cũng không nên dùng LinkerList.
