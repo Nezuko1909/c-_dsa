@@ -1,4 +1,4 @@
-package p4.c3;
+package p4_stack_queue.c3;
 
 import java.util.Scanner;
 

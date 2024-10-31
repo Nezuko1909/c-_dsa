@@ -1,4 +1,4 @@
-package p4.c2;
+package p4_stack_queue.c2;
 
 import java.util.*;
 

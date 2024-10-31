@@ -1,4 +1,4 @@
-package p4.c4;
+package p4_stack_queue.c4;
 
 import java.io.*;
 import java.math.*;
