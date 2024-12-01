@@ -44,7 +44,6 @@ void selectionSort(int n, int a[]) {
         }
         cout << endl;
     }
-
 }
 
 void insertSort(int n, int a[]) {

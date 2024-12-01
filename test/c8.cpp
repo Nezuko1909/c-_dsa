@@ -14,7 +14,7 @@ void selectionSort(int n, int a[]) {
         }
 
         swap(a[i], a[minI]);
-        if (i != minI) cout <<i<<" "<<minI<<"\n";
+        if (i != minI) cout <<i<<" "<<minI<<"\n"; //?
     }
 }
 
