@@ -15,25 +15,35 @@ string rtrim(const string &);
  */
 
 long candies(int n, vector<int> arr) {
+    // Tạo mảng c lưu số kẹo, khởi tạo mỗi học sinh có ít nhất 1 viên
     std::vector<int> c(n, 1);
 
-    for (int i = 1; i < n; ++i) {
+    // Duyệt từ trái sang phải
+    for (int i = 1; i < n; i++) {
+        // Nếu học sinh hiện tại có điểm cao hơn học sinh trước đó,
+        // thì số kẹo của học sinh hiện tại phải nhiều hơn học sinh trước đó
         if (arr[i] > arr[i - 1]) {
             c[i] = c[i - 1] + 1;
         }
     }
 
+    // Duyệt từ phải sang trái
     for (int i = n - 2; i >= 0; --i) {
+        // Nếu học sinh hiện tại có điểm cao hơn học sinh tiếp theo,
+        // thì số kẹo của học sinh hiện tại phải lớn hơn số kẹo của học sinh tiếp theo.
+        // Sử dụng hàm max để đảm bảo giữ nguyên số kẹo đã tính từ lượt duyệt trái sang phải
         if (arr[i] > arr[i + 1]) {
             c[i] = max(c[i], c[i + 1] + 1);
         }
     }
 
+    // Tính tổng số kẹo cần phát
+    // Mảng c hiện tại đã lưu số kẹo tối thiểu cho từng học sinh
     long s = 0;
     for (int candy : c) {
-        s += candy;
+        s += candy; // Cộng dồn số kẹo của từng học sinh vào biến tổng
     }
-    return s;
+    return s; // Trả về tổng số kẹo tối thiểu
 }
 
 int main()
