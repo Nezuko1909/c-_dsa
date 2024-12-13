@@ -38,7 +38,7 @@ vector<int> lis(vector<int> a) {
 
 // GPT
 
-vector<int> lis(vector<int> a) {
+vector<int> lis2(vector<int> a) {
     int n = a.size();
     vector<int> c(n, 1);       // c[i]: Độ dài LIS kết thúc tại vị trí i
     vector<int> parent(n, -1); // Lưu chỉ số phần tử trước trong LIS
@@ -83,9 +83,15 @@ int main() {
     // }
 
     vector<int> li = lis(a);
+    vector<int> li2 = lis2(a);
 
     for (auto x : li) {
         cout<<x<<" ";
     }
+    cout<<endl;
+    for (auto x : li2) {
+        cout<<x<<" ";
+    }
+
     return 0;
 }
