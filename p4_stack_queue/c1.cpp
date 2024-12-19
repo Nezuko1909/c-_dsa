@@ -46,7 +46,7 @@ void init(StackL& s) {
 void push(StackL& s, int x) {
     Node* newNode = new Node();
     newNode->data = x;
-    newNode->next = s.top;
+    newNode->next = s.top;4
     s.top = newNode;
 }
 

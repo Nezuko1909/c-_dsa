@@ -3,25 +3,33 @@
 
 using namespace std;
 
+// Hàm phân đoạn (partition): Chia mảng thành hai phần dựa trên pivot
 int pt(vector<int>& a, int l, int h) {
-    int p = a[h];
-    int i = l - 1;
+    int p = a[h];  // Chọn pivot là phần tử cuối cùng
+    int i = l - 1; // Vị trí cuối cùng của vùng nhỏ hơn pivot
 
+    // Duyệt qua các phần tử từ l đến h-1
     for (int j = l; j < h; j++) {
-        if (a[j] < p) {
-            i++;
-            swap(a[i], a[j]);
+        if (a[j] < p) { // Nếu phần tử nhỏ hơn pivot
+            i++; // Mở rộng vùng nhỏ hơn pivot
+            swap(a[i], a[j]); // Đưa phần tử nhỏ hơn vào vùng bên trái
         }
     }
+    // Đặt pivot vào đúng vị trí, sau tất cả các phần tử nhỏ hơn
     swap(a[i + 1], a[h]);
-    return i + 1;
+
+    return i + 1; // Trả về chỉ số của pivot
 }
 
+// Hàm QuickSort: Sắp xếp mảng theo phương pháp chia để trị
 void quickSort(vector<int>& a, int l, int h) {
-    if (l < h) {
-        int ptt = pt(a, l, h);
+    if (l < h) { // Điều kiện dừng: Khi l >= h, đoạn mảng không còn phần tử nào để sắp xếp
+        int ptt = pt(a, l, h); // Phân đoạn mảng và lấy vị trí của pivot
 
+        // Đệ quy sắp xếp phần bên trái (nhỏ hơn pivot)
         quickSort(a, l, ptt - 1);
+
+        // Đệ quy sắp xếp phần bên phải (lớn hơn pivot)
         quickSort(a, ptt + 1, h);
     }
 }
